@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import ArticleDetail from '../../../components/ArticleDetail/ArticleDetail';
-import actualitesData from '../../../data/actualites.json';
+import alumniData from '../../../data/alumni.json';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
-    return actualitesData.map((item) => ({
+    return alumniData.map((item) => ({
         slug: item.slug,
     }));
 }
 
-export default async function NewsArticle({ params }: { params: Promise<{ slug: string }> }) {
+export default async function AlumniArticle({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const article = actualitesData.find((item) => item.slug === slug);
+    const article = alumniData.find((item) => item.slug === slug);
 
     if (!article) {
         notFound();
@@ -24,8 +24,8 @@ export default async function NewsArticle({ params }: { params: Promise<{ slug: 
             date={article.date}
             description={article.desc}
             content={article.content}
-            backLink="/actualites"
-            backText="← Retour aux actualités"
+            backLink="/alumni"
+            backText="← Retour aux alumni"
         />
     );
 }

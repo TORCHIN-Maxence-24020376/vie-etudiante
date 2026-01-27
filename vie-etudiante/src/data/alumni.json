@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "title": "Interview : Marc, Développeur Fullstack",
+        "slug": "interview-marc-fullstack",
+        "date": "10 Janvier 2026",
+        "isoDate": "2026-01-10",
+        "desc": "Découvrez le parcours de Marc, promo 2022, aujourd'hui freelance à Lyon.",
+        "category": "Témoignage",
+        "content": "Discover Marc's journey from graduation to becoming a freelance fullstack developer."
+    },
+    {
+        "id": 2,
+        "title": "Afterwork Alumni Paris",
+        "slug": "afterwork-alumni-paris",
+        "date": "20 Février 2026",
+        "isoDate": "2026-02-20",
+        "desc": "Rencontre des anciens étudiants travaillant en région parisienne.",
+        "category": "Événement",
+        "content": "Join us for an alumni meet-up in Paris."
+    },
+    {
+        "id": 3,
+        "title": "Offre junior : Sopra Steria",
+        "slug": "offre-junior-sopra",
+        "date": "05 Février 2026",
+        "isoDate": "2026-02-05",
+        "desc": "Sopra Steria recrute des profils juniors issus du BUT Informatique.",
+        "category": "Carrière",
+        "content": "Junior developer positions available at Sopra Steria."
+    },
+    {
+        "id": 4,
+        "title": "Lancement du Mentorat",
+        "slug": "lancement-mentorat",
+        "date": "01 Mars 2026",
+        "isoDate": "2026-03-01",
+        "desc": "Nouveau programme de parrainage entre anciens et étudiants actuels.",
+        "category": "Réseau",
+        "content": "New mentorship program connecting alumni with current students."
+    },
+    {
+        "id": 5,
+        "title": "Annuaire 2025 disponible",
+        "slug": "annuaire-2025",
+        "date": "15 Janvier 2026",
+        "isoDate": "2026-01-15",
+        "desc": "Mise à jour de l'annuaire des anciens avec les sortants de la promo 2025.",
+        "category": "Annuaire",
+        "content": "The 2025 alumni directory is now available."
+    }
+]

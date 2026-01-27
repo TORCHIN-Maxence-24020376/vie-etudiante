@@ -1,6 +1,33 @@
+"use client";
+
+import { useState, useMemo } from 'react';
 import styles from '../inner.module.css';
+import NewsFilter from '../../components/NewsFilter/NewsFilter';
+import ArticleCard from '../../components/ArticleCard/ArticleCard';
+import etudesData from '../../data/etudes.json';
+
+const CATEGORIES = ["Tutorat", "Licences", "Examens", "Ressources"];
 
 export default function Etudes() {
+    const [activeCategory, setActiveCategory] = useState('All');
+    const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
+
+    const filteredItems = useMemo(() => {
+        let items = [...etudesData];
+
+        if (activeCategory !== 'All') {
+            items = items.filter(item => item.category === activeCategory);
+        }
+
+        items.sort((a, b) => {
+            const dateA = new Date(a.isoDate).getTime();
+            const dateB = new Date(b.isoDate).getTime();
+            return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
+        });
+
+        return items;
+    }, [activeCategory, sortOrder]);
+
     return (
         <main className={styles.main}>
             <section className={styles.hero}>
@@ -11,34 +38,33 @@ export default function Etudes() {
             </section>
 
             <section className={styles.section}>
+                <NewsFilter
+                    categories={CATEGORIES}
+                    activeCategory={activeCategory}
+                    onCategoryChange={setActiveCategory}
+                    sortOrder={sortOrder}
+                    onSortChange={setSortOrder}
+                />
+
                 <div className={styles.grid}>
-                    <div className={styles.card}>
-                        <h2 className={styles.cardTitle}>Tutorat par les pairs</h2>
-                        <p className={styles.cardDesc}>
-                            Des séances de révisions organisées par les étudiants de 2ème et 3ème année
-                            pour aider les 1ères années (Java, SQL, Math).
-                        </p>
-                        <a href="#" className={styles.cardLink}>Voir les créneaux →</a>
-                    </div>
-
-                    <div className={styles.card}>
-                        <h2 className={styles.cardTitle}>Projet Voltaire</h2>
-                        <p className={styles.cardDesc}>
-                            Accès à la plateforme pour améliorer votre orthographe, indispensable
-                            pour la certification de fin d'année.
-                        </p>
-                        <a href="#" className={styles.cardLink}>Accéder →</a>
-                    </div>
-
-                    <div className={styles.card}>
-                        <h2 className={styles.cardTitle}>Documentation Technique</h2>
-                        <p className={styles.cardDesc}>
-                            Accès MSDNAA, JetBrains Student Pack et autres licences logicielles
-                            offertes par l'IUT.
-                        </p>
-                        <a href="#" className={styles.cardLink}>Récupérer ma licence →</a>
-                    </div>
+                    {filteredItems.map((item) => (
+                        <ArticleCard
+                            key={item.id}
+                            title={item.title}
+                            date={item.date}
+                            category={item.category}
+                            desc={item.desc}
+                            slug={item.slug}
+                            type="etudes"
+                        />
+                    ))}
                 </div>
+
+                {filteredItems.length === 0 && (
+                    <div style={{ textAlign: 'center', gridColumn: '1 / -1', padding: '2rem', color: '#888' }}>
+                        Aucun contenu trouvé dans cette catégorie.
+                    </div>
+                )}
             </section>
         </main>
     );

@@ -8,7 +8,7 @@ interface ArticleCardProps {
     category: string;
     desc: string;
     slug: string;
-    type?: 'actualites' | 'bde';
+    type?: 'actualites' | 'bde' | 'etudes' | 'alumni';
     price?: string;
 }
 
@@ -26,7 +26,16 @@ export default function ArticleCard({ title, date, category, desc, slug, type = 
         cardRef.current.style.setProperty('--mouse-y', `${y}px`);
     };
 
-    const baseUrl = type === 'bde' ? '/bde' : '/actualites';
+    const getBaseUrl = (type: string) => {
+        switch (type) {
+            case 'bde': return '/bde';
+            case 'etudes': return '/etudes';
+            case 'alumni': return '/alumni';
+            default: return '/actualites';
+        }
+    };
+
+    const baseUrl = getBaseUrl(type);
 
     return (
         <article

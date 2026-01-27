@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react';
 import styles from '../inner.module.css';
 import NewsFilter from '../../components/NewsFilter/NewsFilter';
 import ArticleCard from '../../components/ArticleCard/ArticleCard';
-import contentData from '../../data/content.json';
+import actualitesData from '../../data/actualites.json';
 
 interface NewsItem {
     id: number;
@@ -22,7 +22,7 @@ export default function Actualites() {
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
 
     const filteredNews = useMemo(() => {
-        let items = [...contentData.news];
+        let items = [...actualitesData];
 
         if (activeCategory !== 'All') {
             items = items.filter(item => item.category === activeCategory);

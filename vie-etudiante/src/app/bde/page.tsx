@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react';
 import styles from '../inner.module.css';
 import NewsFilter from '../../components/NewsFilter/NewsFilter';
 import ArticleCard from '../../components/ArticleCard/ArticleCard';
-import contentData from '../../data/content.json';
+import bdeData from '../../data/bde.json';
 
 interface EventItem {
     id: number;
@@ -23,7 +23,7 @@ export default function BDE() {
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
     const filteredEvents = useMemo(() => {
-        let items = [...contentData.events];
+        let items = [...bdeData];
 
         if (activeCategory !== 'All') {
             items = items.filter(item => item.category === activeCategory);

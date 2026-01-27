@@ -1,17 +1,17 @@
 import Link from 'next/link';
 import ArticleDetail from '../../../components/ArticleDetail/ArticleDetail';
-import contentData from '../../../data/content.json';
+import bdeData from '../../../data/bde.json';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
-    return contentData.events.map((item) => ({
+    return bdeData.map((item) => ({
         slug: item.slug,
     }));
 }
 
 export default async function EventDetail({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const event = contentData.events.find((item) => item.slug === slug);
+    const event = bdeData.find((item) => item.slug === slug);
 
     if (!event) {
         notFound();
