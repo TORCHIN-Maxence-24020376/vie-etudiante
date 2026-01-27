@@ -1,0 +1,380 @@
+/* Shared styles for inner pages */
+
+.main {
+    min-height: 100vh;
+    padding-bottom: 6rem;
+    background-attachment: fixed;
+    /* Parallax-like feel if we had a bg image */
+}
+
+/* Journal Hero Section */
+.hero {
+    position: relative;
+    padding: 6rem 1rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    max-width: 1000px;
+    background: linear-gradient(135deg, #000 0%, #444 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+    animation: fadeUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: #666;
+    max-width: 700px;
+    line-height: 1.6;
+    animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Grid Layouts */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.02),
+        0 2px 4px -1px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.05),
+        0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #1a1a1a;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.cardDate {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cardDesc {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.cardLink {
+    color: #111;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.2s ease;
+}
+
+.cardLink:hover {
+    gap: 0.75rem;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.categoryBadge {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 100px;
+    background: #f4f4f5;
+    color: #52525b;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Article / Event Detail Page - High End Design */
+.articleContainer {
+    max-width: 800px;
+    margin: -2rem auto 0;
+    /* Slight overlap with hero if we had bg */
+    position: relative;
+    z-index: 10;
+
+    /* The "Paper" Look */
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 4rem;
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s forwards;
+    opacity: 0;
+    /* for animation */
+}
+
+.detailHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.detailMetaGroup {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    color: #71717a;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.journalLead {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #27272a;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+.journalBody {
+    font-size: 1.125rem;
+    line-height: 1.9;
+    color: #3f3f46;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.detailDivider {
+    border: 0;
+    height: 1px;
+    background: #e4e4e7;
+    margin: 3rem 0;
+    width: 30%;
+    /* Minimalist center divider */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* BDE Specifics */
+.priceTag {
+    background: #18181b;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.eventMetaBox {
+    background: #fafafa;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+    border: 1px solid #e4e4e7;
+}
+
+.backLinkContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid #f4f4f5;
+}
+
+.backButton {
+    padding: 0.8rem 2rem;
+    border-radius: 100px;
+    background: #f4f4f5;
+    color: #52525b;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.backButton:hover {
+    background: #18181b;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 
+   DARK MODE CONFIGURATION 
+   Using Zinc/Slate palette for premium feel
+*/
+@media (prefers-color-scheme: dark) {
+    .title {
+        background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+        color: #a1a1aa;
+    }
+
+    /* Card Dark Mode */
+    .card {
+        background: #18181b;
+        /* Zinc 900 */
+        border-color: #27272a;
+        /* Zinc 800 */
+        box-shadow: none;
+    }
+
+    .card:hover {
+        background: #27272a;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    .cardTitle {
+        color: #f4f4f5;
+    }
+
+    .cardDesc {
+        color: #d4d4d8;
+    }
+
+    .cardLink {
+        color: #fff;
+    }
+
+    .cardDate {
+        color: #71717a;
+    }
+
+    .categoryBadge {
+        background: #27272a;
+        color: #e4e4e7;
+        border-color: #3f3f46;
+    }
+
+    /* Article Container Dark Mode */
+    .articleContainer {
+        background: #18181b;
+        border-color: #27272a;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .journalLead {
+        color: #e4e4e7;
+        /* Zinc 200 */
+    }
+
+    .journalBody {
+        color: #d4d4d8;
+        /* Zinc 300 */
+    }
+
+    .detailMetaGroup {
+        color: #71717a;
+    }
+
+    .detailDivider {
+        background: #27272a;
+    }
+
+    .eventMetaBox {
+        background: #09090b;
+        /* Zinc 950 */
+        border-color: #27272a;
+    }
+
+    .priceTag {
+        background: #fff;
+        color: #000;
+    }
+
+    .backButton {
+        background: #27272a;
+        color: #d4d4d8;
+    }
+
+    .backButton:hover {
+        background: #fff;
+        color: #000;
+    }
+
+    .backLinkContainer {
+        border-top-color: #27272a;
+    }
+}
+
+/* Mobile Responsiveness for Article */
+@media (max-width: 768px) {
+    .articleContainer {
+        margin: 0 1rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .eventMetaBox {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+}

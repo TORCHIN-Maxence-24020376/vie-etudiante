@@ -1,0 +1,196 @@
+/* Base styles (Light Mode default) */
+.footer {
+    background-color: #f8f9fa;
+    color: #1a1a1a;
+    padding: 4rem 2rem 1rem;
+    margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Brand Column */
+.brandColumn h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #000, #555);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.brandDescription {
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    max-width: 300px;
+}
+
+/* Columns & Headings */
+.column h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+/* Links */
+.linkList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.link {
+    color: #444;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.link:hover {
+    color: #000;
+    transform: translateX(4px);
+}
+
+/* Social Icons */
+.socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.socialIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    color: #333;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+.socialIcon:hover {
+    background: #000;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Bottom Bar */
+.bottomBar {
+    padding-top: 1.5rem;
+    text-align: center;
+    color: #666;
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.legalLinks {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.legalLink {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.legalLink:hover {
+    color: #000;
+}
+
+/* DARK MODE OVERRIDES */
+@media (prefers-color-scheme: dark) {
+    .footer {
+        background-color: #111;
+        color: #fff;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .container {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .brandColumn h2 {
+        background: linear-gradient(135deg, #fff, #888);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .brandDescription {
+        color: #888;
+    }
+
+    .column h3 {
+        color: #555;
+    }
+
+    .link {
+        color: #ccc;
+    }
+
+    .link:hover {
+        color: #fff;
+    }
+
+    .socialIcon {
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff;
+    }
+
+    .socialIcon:hover {
+        background: #fff;
+        color: #000;
+    }
+
+    .bottomBar {
+        color: #555;
+    }
+
+    .legalLink {
+        color: #555;
+    }
+
+    .legalLink:hover {
+        color: #888;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 3rem 1.5rem 1rem;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .bottomBar {
+        flex-direction: column;
+        text-align: center;
+    }
+}
