@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from '../../inner.module.css';
+import styles from './ArticleDetail.module.css';
 import contentData from '../../../data/content.json';
 import { notFound } from 'next/navigation';
 
@@ -19,32 +19,28 @@ export default async function NewsArticle({ params }: { params: Promise<{ slug: 
 
     return (
         <main className={styles.main}>
-            {/* Editorial Header */}
-            <section className={styles.hero} style={{ paddingBottom: '2rem' }}>
-                <div className={styles.detailHeader}>
-                    <span className={styles.categoryBadge}>{article.category}</span>
-                </div>
-                <h1 className={styles.title}>{article.title}</h1>
-                <div className={styles.detailMetaGroup}>
-                    <span className={styles.detailDate}>{article.date}</span>
-                    <span>•</span>
-                    <span>3 min de lecture</span>
-                </div>
-            </section>
-
-            {/* Article Content */}
             <article className={styles.articleContainer}>
-                <p className={styles.journalLead}>
-                    {article.desc}
-                </p>
+                <header className={styles.header}>
+                    <span className={styles.category}>{article.category}</span>
+                    <h1 className={styles.title}>{article.title}</h1>
+                    <div className={styles.meta}>
+                        <time>{article.date}</time>
+                        <span>•</span>
+                        <span>3 min de lecture</span>
+                    </div>
+                </header>
 
-                <hr className={styles.detailDivider} />
+                <div className={styles.content}>
+                    <p className={styles.lead}>
+                        {article.desc}
+                    </p>
 
-                <div className={styles.journalBody}>
-                    {article.content || "Contenu détaillé à venir..."}
+                    <div className={styles.body}>
+                        {article.content || "Contenu détaillé à venir..."}
+                    </div>
                 </div>
 
-                <div className={styles.backLinkContainer}>
+                <div className={styles.footer}>
                     <Link href="/actualites" className={styles.backButton}>
                         ← Retour aux actualités
                     </Link>
