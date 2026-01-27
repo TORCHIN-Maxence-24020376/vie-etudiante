@@ -1,52 +1,60 @@
-[
-    {
-        "id": 1,
-        "title": "Tutorat Java & POO",
-        "slug": "tutorat-java-poo",
-        "date": "Every Thursday",
-        "isoDate": "2026-01-30",
-        "desc": "Séances de soutien organisées par les étudiants de 2ème année pour les débutants.",
-        "category": "Tutorat",
-        "content": "Improve your Java skills with peer tutoring sessions."
-    },
-    {
-        "id": 2,
-        "title": "Licences JetBrains",
-        "slug": "licences-jetbrains",
-        "date": "Permanent",
-        "isoDate": "2026-01-01",
-        "desc": "Comment activer votre licence étudiante gratuite pour IntelliJ, WebStorm et autres.",
-        "category": "Licences",
-        "content": "Get your free educational license for JetBrains products."
-    },
-    {
-        "id": 3,
-        "title": "Planning des Partiels S2",
-        "slug": "planning-partiels-s2",
-        "date": "15 Mai 2026",
-        "isoDate": "2026-05-15",
-        "desc": "Calendrier prévisionnel des examens finaux pour le second semestre.",
-        "category": "Examens",
-        "content": "Check the schedule for the upcoming semester exams."
-    },
-    {
-        "id": 4,
-        "title": "Ressources Mathématiques",
-        "slug": "ressources-maths",
-        "date": "Permanent",
-        "isoDate": "2026-01-01",
-        "desc": "Accès aux annales et fiches de révision pour les modules de Mathématiques.",
-        "category": "Ressources",
-        "content": "Access past exams and revision sheets for Math modules."
-    },
-    {
-        "id": 5,
-        "title": "Installation Machine Virtuelle",
-        "slug": "installation-vm",
-        "date": "Permanent",
-        "isoDate": "2026-01-01",
-        "desc": "Guide pas à pas pour installer Linux sur votre machine personnelle.",
-        "category": "Ressources",
-        "content": "Step-by-step guide to installing Linux on your personal machine."
-    }
-]
+{
+    "categories": [
+        "Tutorat",
+        "Licences",
+        "Examens",
+        "Ressources"
+    ],
+    "items": [
+        {
+            "id": 1,
+            "title": "Tutorat Java & POO",
+            "slug": "tutorat-java-poo",
+            "date": "Every Thursday",
+            "isoDate": "2026-01-30",
+            "desc": "Séances de soutien organisées par les étudiants de 2ème année pour les débutants.",
+            "category": "Tutorat",
+            "content": "Improve your Java skills with peer tutoring sessions."
+        },
+        {
+            "id": 2,
+            "title": "Licences JetBrains",
+            "slug": "licences-jetbrains",
+            "date": "Permanent",
+            "isoDate": "2026-01-01",
+            "desc": "Comment activer votre licence étudiante gratuite pour IntelliJ, WebStorm et autres.",
+            "category": "Licences",
+            "content": "Get your free educational license for JetBrains products."
+        },
+        {
+            "id": 3,
+            "title": "Planning des Partiels S2",
+            "slug": "planning-partiels-s2",
+            "date": "15 Mai 2026",
+            "isoDate": "2026-05-15",
+            "desc": "Calendrier prévisionnel des examens finaux pour le second semestre.",
+            "category": "Examens",
+            "content": "Check the schedule for the upcoming semester exams."
+        },
+        {
+            "id": 4,
+            "title": "Ressources Mathématiques",
+            "slug": "ressources-maths",
+            "date": "Permanent",
+            "isoDate": "2026-01-01",
+            "desc": "Accès aux annales et fiches de révision pour les modules de Mathématiques.",
+            "category": "Ressources",
+            "content": "Access past exams and revision sheets for Math modules."
+        },
+        {
+            "id": 5,
+            "title": "Installation Machine Virtuelle",
+            "slug": "installation-vm",
+            "date": "Permanent",
+            "isoDate": "2026-01-01",
+            "desc": "Guide pas à pas pour installer Linux sur votre machine personnelle.",
+            "category": "Ressources",
+            "content": "Step-by-step guide to installing Linux on your personal machine."
+        }
+    ]
+}

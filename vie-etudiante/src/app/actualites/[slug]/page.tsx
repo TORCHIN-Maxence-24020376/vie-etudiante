@@ -4,14 +4,14 @@ import actualitesData from '../../../data/actualites.json';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
-    return actualitesData.map((item) => ({
+    return actualitesData.items.map((item) => ({
         slug: item.slug,
     }));
 }
 
 export default async function NewsArticle({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const article = actualitesData.find((item) => item.slug === slug);
+    const article = actualitesData.items.find((item) => item.slug === slug);
 
     if (!article) {
         notFound();

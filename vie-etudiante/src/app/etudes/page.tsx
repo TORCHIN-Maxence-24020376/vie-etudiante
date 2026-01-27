@@ -6,14 +6,12 @@ import NewsFilter from '../../components/NewsFilter/NewsFilter';
 import ArticleCard from '../../components/ArticleCard/ArticleCard';
 import etudesData from '../../data/etudes.json';
 
-const CATEGORIES = ["Tutorat", "Licences", "Examens", "Ressources"];
-
 export default function Etudes() {
     const [activeCategory, setActiveCategory] = useState('All');
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
 
     const filteredItems = useMemo(() => {
-        let items = [...etudesData];
+        let items = [...etudesData.items];
 
         if (activeCategory !== 'All') {
             items = items.filter(item => item.category === activeCategory);
@@ -39,7 +37,7 @@ export default function Etudes() {
 
             <section className={styles.section}>
                 <NewsFilter
-                    categories={CATEGORIES}
+                    categories={etudesData.categories}
                     activeCategory={activeCategory}
                     onCategoryChange={setActiveCategory}
                     sortOrder={sortOrder}

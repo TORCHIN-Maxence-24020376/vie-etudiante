@@ -16,14 +16,12 @@ interface EventItem {
     price?: string;
 }
 
-const CATEGORIES = ["Soirée", "Voyage", "Sport", "Culture", "Autre"];
-
 export default function BDE() {
     const [activeCategory, setActiveCategory] = useState('All');
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
     const filteredEvents = useMemo(() => {
-        let items = [...bdeData];
+        let items = [...bdeData.items];
 
         if (activeCategory !== 'All') {
             items = items.filter(item => item.category === activeCategory);
@@ -49,7 +47,7 @@ export default function BDE() {
 
             <section className={styles.section}>
                 <NewsFilter
-                    categories={CATEGORIES}
+                    categories={bdeData.categories}
                     activeCategory={activeCategory}
                     onCategoryChange={setActiveCategory}
                     sortOrder={sortOrder}

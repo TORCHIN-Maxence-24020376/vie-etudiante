@@ -1,90 +1,98 @@
-[
-    {
-        "id": 1,
-        "title": "Soirée d'Intégration",
-        "slug": "soiree-integration",
-        "date": "18 Septembre 2025",
-        "isoDate": "2025-09-18",
-        "desc": "La traditionnelle soirée d'intégration au Mistral pour accueillir les nouveaux ! Thème : Néon.",
-        "category": "Soirée",
-        "price": "15€",
-        "content": "Lorem ipsum dolor sit amet. Join us for an amazing night of fun and integration!"
-    },
-    {
-        "id": 2,
-        "title": "Week-end d'Intégration (WEI)",
-        "slug": "wei-integration",
-        "date": "03 Octobre 2025",
-        "isoDate": "2025-10-03",
-        "desc": "3 jours de folie dans un camping privatisé. Activités, soirées et cohésion garanties.",
-        "category": "Voyage",
-        "price": "120€",
-        "content": "Three days of non-stop activities in a private camping site."
-    },
-    {
-        "id": 3,
-        "title": "Nuit de l'Info",
-        "slug": "nuit-de-l-info",
-        "date": "04 Décembre 2025",
-        "isoDate": "2025-12-04",
-        "desc": "Le défi national de code : une nuit pour développer une application web. Pizza offerte !",
-        "category": "Culture",
-        "price": "Gratuit",
-        "content": "The national coding challenge. One night to build a web app."
-    },
-    {
-        "id": 4,
-        "title": "Voyage au Ski",
-        "slug": "voyage-ski",
-        "date": "10 Janvier 2026",
-        "isoDate": "2026-01-10",
-        "desc": "Une semaine aux Orres avec tout le département. Logement + Forfait + Matériel inclus.",
-        "category": "Voyage",
-        "price": "450€",
-        "content": "A week in Les Orres with the whole department."
-    },
-    {
-        "id": 5,
-        "title": "Tournoi Futsal Inter-Promo",
-        "slug": "tournoi-futsal",
-        "date": "15 Février 2026",
-        "isoDate": "2026-02-15",
-        "desc": "Qui des 1ères, 2èmes ou 3èmes années remportera la coupe ? Inscriptions par équipe de 7.",
-        "category": "Sport",
-        "price": "5€ / joueur",
-        "content": "Futsal tournament between different years."
-    },
-    {
-        "id": 6,
-        "title": "Gala de Fin d'Année",
-        "slug": "gala-fin-annee",
-        "date": "25 Juin 2026",
-        "isoDate": "2026-06-25",
-        "desc": "Tenue de soirée exigée pour célébrer la fin des partiels et la remise des diplômes.",
-        "category": "Soirée",
-        "price": "35€",
-        "content": "End of year gala to celebrate."
-    },
-    {
-        "id": 7,
-        "title": "Barbecue de Printemps",
-        "slug": "barbecue-printemps",
-        "date": "12 Mai 2026",
-        "isoDate": "2026-05-12",
-        "desc": "Détente au soleil devant le bâtiment A. Burgers et hot-dogs pour tout le monde.",
-        "category": "Culture",
-        "price": "5€",
-        "content": "Spring BBQ in front of Building A."
-    },
-    {
-        "id": 8,
-        "title": "Laser Game",
-        "slug": "laser-game",
-        "date": "20 Mars 2026",
-        "isoDate": "2026-03-20",
-        "desc": "Affrontez vos profs dans l'arène ! Une occasion unique de régler vos comptes (amicalement).",
-        "category": "Sport",
-        "price": "15€",
-        "content": "Laser tag against teachers."
-    }
-]
+{
+    "categories": [
+        "Soirée",
+        "Voyage",
+        "Culture",
+        "Sport"
+    ],
+    "items": [
+        {
+            "id": 1,
+            "title": "Soirée d'Intégration",
+            "slug": "soiree-integration",
+            "date": "18 Septembre 2025",
+            "isoDate": "2025-09-18",
+            "desc": "La traditionnelle soirée d'intégration au Mistral pour accueillir les nouveaux ! Thème : Néon.",
+            "category": "Soirée",
+            "price": "15€",
+            "content": "Lorem ipsum dolor sit amet. Join us for an amazing night of fun and integration!"
+        },
+        {
+            "id": 2,
+            "title": "Week-end d'Intégration (WEI)",
+            "slug": "wei-integration",
+            "date": "03 Octobre 2025",
+            "isoDate": "2025-10-03",
+            "desc": "3 jours de folie dans un camping privatisé. Activités, soirées et cohésion garanties.",
+            "category": "Voyage",
+            "price": "120€",
+            "content": "Three days of non-stop activities in a private camping site."
+        },
+        {
+            "id": 3,
+            "title": "Nuit de l'Info",
+            "slug": "nuit-de-l-info",
+            "date": "04 Décembre 2025",
+            "isoDate": "2025-12-04",
+            "desc": "Le défi national de code : une nuit pour développer une application web. Pizza offerte !",
+            "category": "Culture",
+            "price": "Gratuit",
+            "content": "The national coding challenge. One night to build a web app."
+        },
+        {
+            "id": 4,
+            "title": "Voyage au Ski",
+            "slug": "voyage-ski",
+            "date": "10 Janvier 2026",
+            "isoDate": "2026-01-10",
+            "desc": "Une semaine aux Orres avec tout le département. Logement + Forfait + Matériel inclus.",
+            "category": "Voyage",
+            "price": "450€",
+            "content": "A week in Les Orres with the whole department."
+        },
+        {
+            "id": 5,
+            "title": "Tournoi Futsal Inter-Promo",
+            "slug": "tournoi-futsal",
+            "date": "15 Février 2026",
+            "isoDate": "2026-02-15",
+            "desc": "Qui des 1ères, 2èmes ou 3èmes années remportera la coupe ? Inscriptions par équipe de 7.",
+            "category": "Sport",
+            "price": "5€ / joueur",
+            "content": "Futsal tournament between different years."
+        },
+        {
+            "id": 6,
+            "title": "Gala de Fin d'Année",
+            "slug": "gala-fin-annee",
+            "date": "25 Juin 2026",
+            "isoDate": "2026-06-25",
+            "desc": "Tenue de soirée exigée pour célébrer la fin des partiels et la remise des diplômes.",
+            "category": "Soirée",
+            "price": "35€",
+            "content": "End of year gala to celebrate."
+        },
+        {
+            "id": 7,
+            "title": "Barbecue de Printemps",
+            "slug": "barbecue-printemps",
+            "date": "12 Mai 2026",
+            "isoDate": "2026-05-12",
+            "desc": "Détente au soleil devant le bâtiment A. Burgers et hot-dogs pour tout le monde.",
+            "category": "Culture",
+            "price": "5€",
+            "content": "Spring BBQ in front of Building A."
+        },
+        {
+            "id": 8,
+            "title": "Laser Game",
+            "slug": "laser-game",
+            "date": "20 Mars 2026",
+            "isoDate": "2026-03-20",
+            "desc": "Affrontez vos profs dans l'arène ! Une occasion unique de régler vos comptes (amicalement).",
+            "category": "Sport",
+            "price": "15€",
+            "content": "Laser tag against teachers."
+        }
+    ]
+}

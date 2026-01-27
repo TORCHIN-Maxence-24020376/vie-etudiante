@@ -1,82 +1,91 @@
-[
-    {
-        "id": 1,
-        "title": "Rentrée 2026 : Ce qu'il faut savoir",
-        "slug": "rentree-2026",
-        "date": "25 Janvier 2026",
-        "isoDate": "2026-01-25",
-        "desc": "Toutes les informations importantes pour la rentrée décalée et les inscriptions administratives.",
-        "category": "Pédagogie",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-    },
-    {
-        "id": 2,
-        "title": "Hackathon : Code the Night",
-        "slug": "hackathon-code-the-night",
-        "date": "12 Février 2026",
-        "isoDate": "2026-02-12",
-        "desc": "Inscriptions ouvertes pour la nuit du code organisée par le BDE. 24h de code non-stop !",
-        "category": "Événement",
-        "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
-    },
-    {
-        "id": 3,
-        "title": "Conférence IA & Éthique",
-        "slug": "conference-ia-ethique",
-        "date": "05 Mars 2026",
-        "isoDate": "2026-03-05",
-        "desc": "Un invité de marque nous parlera des enjeux éthiques de l'intelligence artificielle générative.",
-        "category": "Pédagogie",
-        "content": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis."
-    },
-    {
-        "id": 4,
-        "title": "Partenariat Entreprise : CGI & Capgemini",
-        "slug": "partenariat-cgi-capgemini",
-        "date": "10 Mars 2026",
-        "isoDate": "2026-03-10",
-        "desc": "Les géants de l'ESN viennent présenter leurs offres de stages et d'alternance sur le campus.",
-        "category": "Partenariat",
-        "content": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
-    },
-    {
-        "id": 5,
-        "title": "Tournoi E-sport Inter-IUT",
-        "slug": "tournoi-esport-inter-iut",
-        "date": "20 Mars 2026",
-        "isoDate": "2026-03-20",
-        "desc": "Préparez vos équipes pour le tournoi League of Legends et Rocket League face aux autres IUT.",
-        "category": "Vie Étudiante",
-        "content": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore."
-    },
-    {
-        "id": 6,
-        "title": "Nouveau Labo Réseau",
-        "slug": "nouveau-labo-reseau",
-        "date": "01 Avril 2026",
-        "isoDate": "2026-04-01",
-        "desc": "Le département s'équipe de nouveaux racks Cisco dernière génération pour les TPs de 2ème année.",
-        "category": "Pédagogie",
-        "content": "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-    },
-    {
-        "id": 7,
-        "title": "Voyage d'études à Dublin",
-        "slug": "voyage-etudes-dublin",
-        "date": "15 Avril 2026",
-        "isoDate": "2026-04-15",
-        "desc": "Les inscriptions pour le voyage linguistique en Irlande sont ouvertes. Places limitées !",
-        "category": "International",
-        "content": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi."
-    },
-    {
-        "id": 8,
-        "title": "Afterwork des Anciens",
-        "slug": "afterwork-des-anciens",
-        "date": "02 Mai 2026",
-        "isoDate": "2026-05-02",
-        "desc": "Rencontrez les promotions précédentes et développez votre réseau professionnel autour d'un verre.",
-        "category": "Vie Étudiante",
-        "content": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat."
-    }
-]
+{
+    "categories": [
+        "Pédagogie",
+        "Vie Étudiante",
+        "Événement",
+        "Partenariat",
+        "International"
+    ],
+    "items": [
+        {
+            "id": 1,
+            "title": "Rentrée 2026 : Ce qu'il faut savoir",
+            "slug": "rentree-2026",
+            "date": "25 Janvier 2026",
+            "isoDate": "2026-01-25",
+            "desc": "Toutes les informations importantes pour la rentrée décalée et les inscriptions administratives.",
+            "category": "Pédagogie",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        {
+            "id": 2,
+            "title": "Hackathon : Code the Night",
+            "slug": "hackathon-code-the-night",
+            "date": "12 Février 2026",
+            "isoDate": "2026-02-12",
+            "desc": "Inscriptions ouvertes pour la nuit du code organisée par le BDE. 24h de code non-stop !",
+            "category": "Événement",
+            "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
+        },
+        {
+            "id": 3,
+            "title": "Conférence IA & Éthique",
+            "slug": "conference-ia-ethique",
+            "date": "05 Mars 2026",
+            "isoDate": "2026-03-05",
+            "desc": "Un invité de marque nous parlera des enjeux éthiques de l'intelligence artificielle générative.",
+            "category": "Pédagogie",
+            "content": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis."
+        },
+        {
+            "id": 4,
+            "title": "Partenariat Entreprise : CGI & Capgemini",
+            "slug": "partenariat-cgi-capgemini",
+            "date": "10 Mars 2026",
+            "isoDate": "2026-03-10",
+            "desc": "Les géants de l'ESN viennent présenter leurs offres de stages et d'alternance sur le campus.",
+            "category": "Partenariat",
+            "content": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+        },
+        {
+            "id": 5,
+            "title": "Tournoi E-sport Inter-IUT",
+            "slug": "tournoi-esport-inter-iut",
+            "date": "20 Mars 2026",
+            "isoDate": "2026-03-20",
+            "desc": "Préparez vos équipes pour le tournoi League of Legends et Rocket League face aux autres IUT.",
+            "category": "Vie Étudiante",
+            "content": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore."
+        },
+        {
+            "id": 6,
+            "title": "Nouveau Labo Réseau",
+            "slug": "nouveau-labo-reseau",
+            "date": "01 Avril 2026",
+            "isoDate": "2026-04-01",
+            "desc": "Le département s'équipe de nouveaux racks Cisco dernière génération pour les TPs de 2ème année.",
+            "category": "Pédagogie",
+            "content": "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+        },
+        {
+            "id": 7,
+            "title": "Voyage d'études à Dublin",
+            "slug": "voyage-etudes-dublin",
+            "date": "15 Avril 2026",
+            "isoDate": "2026-04-15",
+            "desc": "Les inscriptions pour le voyage linguistique en Irlande sont ouvertes. Places limitées !",
+            "category": "International",
+            "content": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi."
+        },
+        {
+            "id": 8,
+            "title": "Afterwork des Anciens",
+            "slug": "afterwork-des-anciens",
+            "date": "02 Mai 2026",
+            "isoDate": "2026-05-02",
+            "desc": "Rencontrez les promotions précédentes et développez votre réseau professionnel autour d'un verre.",
+            "category": "Vie Étudiante",
+            "content": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat."
+        }
+    ]
+}
