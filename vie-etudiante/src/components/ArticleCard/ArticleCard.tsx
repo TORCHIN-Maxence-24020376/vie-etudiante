@@ -37,7 +37,11 @@ export default function ArticleCard({ title, date, category, desc, slug, type = 
             <div className={styles.header}>
                 <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                     <span className={styles.category}>{category}</span>
-                    {price && <span className={styles.priceBadge}>{price}</span>}
+                    {price && (
+                        <span className={`${styles.priceBadge} ${price.toLowerCase().includes('gratuit') ? styles.free : styles.paid}`}>
+                            {price}
+                        </span>
+                    )}
                 </div>
                 <time className={styles.date}>{date}</time>
             </div>
