@@ -1,0 +1,387 @@
+.adminContainer {
+    display: flex;
+    min-height: 100vh;
+    background: #fafafa;
+    color: #1a1a1a;
+    font-family: inherit;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background: #fff;
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.sidebarTitle {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #000, #555);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navItem {
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.navItem:hover {
+    background: #f4f4f5;
+    color: #111;
+}
+
+.activeNavItem {
+    background: #18181b;
+    color: #fff !important;
+}
+
+/* Main Content */
+.mainContent {
+    flex: 1;
+    padding: 3rem;
+    max-width: 1200px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.addButton {
+    padding: 0.8rem 1.5rem;
+    background: #18181b;
+    color: #fff;
+    border-radius: 12px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.addButton:hover {
+    transform: translateY(-2px);
+    background: #000;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* Cards & Lists */
+.card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.articleInfo h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.articleMeta {
+    font-size: 0.85rem;
+    color: #888;
+    display: flex;
+    gap: 1rem;
+}
+
+.actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.editBtn,
+.deleteBtn {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.editBtn {
+    background: #f4f4f5;
+    color: #111;
+}
+
+.editBtn:hover {
+    background: #e4e4e7;
+}
+
+.deleteBtn {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.deleteBtn:hover {
+    background: #fecaca;
+}
+
+/* Form Styles */
+.editorOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 2rem;
+}
+
+.editorModal {
+    background: #fff;
+    width: 100%;
+    max-width: 800px;
+    max-height: 90vh;
+    border-radius: 24px;
+    padding: 2.5rem;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #3f3f46;
+}
+
+.input,
+.textarea,
+.select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    border: 1px solid #e4e4e7;
+    background: #fcfcfc;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: #000;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.modalFooter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #f4f4f5;
+}
+
+.saveBtn {
+    padding: 0.8rem 2rem;
+    background: #18181b;
+    color: #fff;
+    border-radius: 99px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+.cancelBtn {
+    padding: 0.8rem 2rem;
+    background: #f4f4f5;
+    color: #666;
+    border-radius: 99px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+/* Categories Management */
+.categoriesSection {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.tagContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    padding: 0.5rem 1rem;
+    background: #fff;
+    border: 1px solid #e4e4e7;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.removeTag {
+    cursor: pointer;
+    color: #a1a1aa;
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.removeTag:hover {
+    color: #dc2626;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    .adminContainer {
+        background: #09090b;
+        color: #fff;
+    }
+
+    .sidebar {
+        background: #111;
+        border-color: #27272a;
+    }
+
+    .sidebarTitle {
+        background: linear-gradient(135deg, #fff, #888);
+        background-clip: text;
+    }
+
+    .navItem:hover {
+        background: #18181b;
+        color: #fff;
+    }
+
+    .activeNavItem {
+        background: #fff;
+        color: #000 !important;
+    }
+
+    .card {
+        background: #18181b;
+        border-color: #27272a;
+    }
+
+    .articleInfo h4 {
+        color: #f4f4f5;
+    }
+
+    .articleMeta {
+        color: #71717a;
+    }
+
+    .editBtn {
+        background: #27272a;
+        color: #d4d4d8;
+    }
+
+    .editBtn:hover {
+        background: #3f3f46;
+        color: #fff;
+    }
+
+    .deleteBtn {
+        background: rgba(220, 38, 38, 0.1);
+        color: #ef4444;
+    }
+
+    .deleteBtn:hover {
+        background: rgba(220, 38, 38, 0.2);
+    }
+
+    .editorModal {
+        background: #18181b;
+        border: 1px solid #27272a;
+    }
+
+    .input,
+    .textarea,
+    .select {
+        background: #09090b;
+        border-color: #27272a;
+        color: #fff;
+    }
+
+    .label {
+        color: #a1a1aa;
+    }
+
+    .saveBtn {
+        background: #fff;
+        color: #000;
+    }
+
+    .cancelBtn {
+        background: #27272a;
+        color: #a1a1aa;
+    }
+
+    .tag {
+        background: #27272a;
+        border-color: #3f3f46;
+        color: #fff;
+    }
+
+    .addButton {
+        background: #fff;
+        color: #000;
+    }
+
+    .addButton:hover {
+        background: #e4e4e7;
+    }
+}
