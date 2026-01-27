@@ -10,12 +10,12 @@
         {
             "id": 1,
             "title": "Rentrée 2026 : Ce qu'il faut savoir",
-            "slug": "rentree-2026",
+            "slug": "rentre-2026--ce-quil-faut-savoir",
             "date": "25 Janvier 2026",
-            "isoDate": "2026-01-25",
+            "isoDate": "2026-01-27",
             "desc": "Toutes les informations importantes pour la rentrée décalée et les inscriptions administratives.",
             "category": "Pédagogie",
-            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            "content": "test"
         },
         {
             "id": 2,

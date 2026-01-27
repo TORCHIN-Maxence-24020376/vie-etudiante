@@ -48,7 +48,7 @@
 /* Grid Layouts */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
@@ -363,18 +363,36 @@
 
 /* Mobile Responsiveness for Article */
 @media (max-width: 768px) {
+    .section {
+        padding: 0 1rem;
+    }
+
     .articleContainer {
         margin: 0 1rem;
-        padding: 2rem 1.5rem;
+        padding: 2.5rem 1.5rem;
     }
 
     .title {
         font-size: 2.5rem;
     }
 
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
     .eventMetaBox {
         flex-direction: column;
         gap: 1.5rem;
         text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
     }
 }

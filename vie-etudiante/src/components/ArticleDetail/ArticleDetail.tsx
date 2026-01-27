@@ -45,7 +45,11 @@ export default function ArticleDetail({
                 <div className={styles.content}>
                     {(price || registerLink) && (
                         <div className={styles.eventMetaBox}>
-                            {price && <span className={styles.priceTag}>{price}</span>}
+                            {price && (
+                                <span className={`${styles.priceTag} ${/gratuit/i.test(price) ? styles.free : styles.paid}`}>
+                                    {price}
+                                </span>
+                            )}
                             {registerLink && (
                                 <a href={registerLink} className={styles.cardLink}>
                                     S'inscrire Maintenant →

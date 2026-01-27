@@ -385,3 +385,103 @@
         background: #e4e4e7;
     }
 }
+
+/* RESPONSIVE OVERRIDES */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+
+    .mainContent {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .adminContainer {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1.5rem;
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .sidebar {
+            border-bottom-color: #27272a;
+        }
+    }
+
+    .sidebarTitle {
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .sidebar nav {
+        display: flex;
+        overflow-x: auto;
+        gap: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .navItem {
+        white-space: nowrap;
+        margin-bottom: 0;
+        padding: 0.6rem 1rem;
+    }
+
+    .mainContent {
+        padding: 1.5rem;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .addButton {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .actions {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .editBtn,
+    .deleteBtn {
+        text-align: center;
+    }
+
+    .editorModal {
+        padding: 1.5rem;
+    }
+
+    .modalFooter {
+        flex-direction: column;
+    }
+
+    .saveBtn,
+    .cancelBtn {
+        width: 100%;
+    }
+}
