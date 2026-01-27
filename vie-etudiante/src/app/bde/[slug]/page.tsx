@@ -4,14 +4,14 @@ import bdeData from '../../../data/bde.json';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
-    return bdeData.map((item) => ({
+    return bdeData.items.map((item) => ({
         slug: item.slug,
     }));
 }
 
 export default async function EventDetail({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const event = bdeData.find((item) => item.slug === slug);
+    const event = bdeData.items.find((item) => item.slug === slug);
 
     if (!event) {
         notFound();

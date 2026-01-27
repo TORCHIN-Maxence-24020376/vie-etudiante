@@ -6,14 +6,12 @@ import NewsFilter from '../../components/NewsFilter/NewsFilter';
 import ArticleCard from '../../components/ArticleCard/ArticleCard';
 import alumniData from '../../data/alumni.json';
 
-const CATEGORIES = ["Témoignage", "Événement", "Carrière", "Réseau", "Annuaire"];
-
 export default function Alumni() {
     const [activeCategory, setActiveCategory] = useState('All');
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
 
     const filteredItems = useMemo(() => {
-        let items = [...alumniData];
+        let items = [...alumniData.items];
 
         if (activeCategory !== 'All') {
             items = items.filter(item => item.category === activeCategory);
@@ -39,7 +37,7 @@ export default function Alumni() {
 
             <section className={styles.section}>
                 <NewsFilter
-                    categories={CATEGORIES}
+                    categories={alumniData.categories}
                     activeCategory={activeCategory}
                     onCategoryChange={setActiveCategory}
                     sortOrder={sortOrder}
