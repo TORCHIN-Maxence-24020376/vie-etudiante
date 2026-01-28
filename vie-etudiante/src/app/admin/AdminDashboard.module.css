@@ -113,7 +113,18 @@
 .articleInfo h4 {
     font-size: 1.1rem;
     font-weight: 700;
+}
+
+.titleWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     margin-bottom: 0.25rem;
+}
+
+.verifiedBadge {
+    font-size: 0.9rem;
+    cursor: help;
 }
 
 .articleMeta {
@@ -185,6 +196,31 @@
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
+.closeModal {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #a1a1aa;
+    transition: all 0.2s ease;
+    line-height: 1;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.closeModal:hover {
+    color: #ef4444;
+    background: #fee2e2;
+}
+
 .formGroup {
     margin-bottom: 1.5rem;
 }
@@ -245,6 +281,70 @@
     font-weight: 600;
     border: none;
     cursor: pointer;
+}
+
+.checkBtn {
+    display: none;
+}
+
+.toggleGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-right: auto;
+}
+
+.toggleLabel {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #666;
+}
+
+/* Switch Styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e4e4e7;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.switch input:checked+.slider {
+    background-color: #22c55e;
+}
+
+.switch input:checked+.slider:before {
+    transform: translateX(20px);
 }
 
 /* Categories Management */
@@ -367,6 +467,23 @@
 
     .cancelBtn {
         background: #27272a;
+        color: #a1a1aa;
+    }
+
+    .closeModal:hover {
+        background: rgba(239, 68, 68, 0.2);
+        color: #f87171;
+    }
+
+    .checkBtn {
+        display: none;
+    }
+
+    .slider {
+        background-color: #27272a;
+    }
+
+    .toggleLabel {
         color: #a1a1aa;
     }
 

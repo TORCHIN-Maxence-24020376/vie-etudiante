@@ -15,6 +15,7 @@ interface Article {
     category: string;
     content: string;
     price?: string; // Optional for BDE
+    isVerified?: boolean;
 }
 
 interface ContentData {
@@ -86,6 +87,7 @@ export default function AdminPage() {
             desc: formData.get('desc') as string,
             category: formData.get('category') as string,
             content: formData.get('content') as string,
+            isVerified: formData.get('isVerified') === 'on',
         };
 
         if (selectedType === 'bde') {
@@ -150,7 +152,12 @@ export default function AdminPage() {
                         {data?.items.map(article => (
                             <div key={article.id} className={styles.card}>
                                 <div className={styles.articleInfo}>
-                                    <h4>{article.title}</h4>
+                                    <div className={styles.titleWrapper}>
+                                        <h4>{article.title}</h4>
+                                        {article.isVerified && (
+                                            <span className={styles.verifiedBadge} title="Vérifié par un rédacteur">✅</span>
+                                        )}
+                                    </div>
                                     <div className={styles.articleMeta}>
                                         <span>📅 {article.date}</span>
                                         <span>🏷️ {article.category}</span>
@@ -184,6 +191,13 @@ export default function AdminPage() {
             {(editingArticle || isCreating) && (
                 <div className={styles.editorOverlay}>
                     <div className={styles.editorModal}>
+                        <button
+                            className={styles.closeModal}
+                            onClick={() => { setEditingArticle(null); setIsCreating(false); }}
+                            title="Fermer"
+                        >
+                            ×
+                        </button>
                         <h3>{isCreating ? 'Nouvel Article' : 'Modifier Article'}</h3>
                         <form onSubmit={handleArticleSubmit}>
                             <div className={styles.formGroup}>
@@ -217,6 +231,17 @@ export default function AdminPage() {
                                 <textarea name="content" className={styles.textarea} defaultValue={editingArticle?.content} rows={8} required />
                             </div>
                             <div className={styles.modalFooter}>
+                                <div className={styles.toggleGroup}>
+                                    <label className={styles.switch}>
+                                        <input
+                                            type="checkbox"
+                                            name="isVerified"
+                                            defaultChecked={editingArticle?.isVerified}
+                                        />
+                                        <span className={styles.slider}></span>
+                                    </label>
+                                    <span className={styles.toggleLabel}>Vérifié</span>
+                                </div>
                                 <button type="button" className={styles.cancelBtn} onClick={() => { setEditingArticle(null); setIsCreating(false); }}>Annuler</button>
                                 <button type="submit" className={styles.saveBtn}>Enregistrer</button>
                             </div>
