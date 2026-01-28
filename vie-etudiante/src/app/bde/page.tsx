@@ -19,12 +19,20 @@ interface EventItem {
 export default function BDE() {
     const [activeCategory, setActiveCategory] = useState('All');
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
+    const [priceFilter, setPriceFilter] = useState<'all' | 'free' | 'paid'>('all');
 
     const filteredEvents = useMemo(() => {
         let items = [...bdeData.items];
 
         if (activeCategory !== 'All') {
             items = items.filter(item => item.category === activeCategory);
+        }
+
+        if (priceFilter !== 'all') {
+            items = items.filter(item => {
+                const isFree = item.price?.toLowerCase() === 'gratuit';
+                return priceFilter === 'free' ? isFree : !isFree;
+            });
         }
 
         items.sort((a, b) => {
@@ -34,7 +42,7 @@ export default function BDE() {
         });
 
         return items;
-    }, [activeCategory, sortOrder]);
+    }, [activeCategory, sortOrder, priceFilter]);
 
     return (
         <main className={styles.main}>
@@ -52,6 +60,8 @@ export default function BDE() {
                     onCategoryChange={setActiveCategory}
                     sortOrder={sortOrder}
                     onSortChange={setSortOrder}
+                    priceFilter={priceFilter}
+                    onPriceFilterChange={setPriceFilter}
                 />
 
                 <div className={styles.grid}>
