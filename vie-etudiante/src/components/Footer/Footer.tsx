@@ -19,8 +19,8 @@ const Footer = () => {
                     <h3>Navigation</h3>
                     <div className={styles.linkList}>
                         <Link href="/actualites" className={styles.link}>Actualités</Link>
-                        <Link href="/bde" className={styles.link}>Vie Étudiante (BDE)</Link>
-                        <Link href="/etudes" className={styles.link}>Études & Ressources</Link>
+                        <Link href="/bde" className={styles.link}>Évènements BDE</Link>
+                        <Link href="/etudes" className={styles.link}>Études</Link>
                         <Link href="/contact" className={styles.link}>Contact</Link>
                     </div>
                 </div>
