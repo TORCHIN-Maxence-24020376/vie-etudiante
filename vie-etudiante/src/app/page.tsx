@@ -31,20 +31,22 @@ export default function Home() {
       {/* Bento Grid Features */}
       <section className={styles.featuresSection}>
         <div className={styles.grid}>
-          {/* Card 1: Projects (Large) */}
-          <div className={`${styles.card} ${styles.cardLarge} ${styles.bgBlue}`}>
-            <span className={styles.cardIcon}>💻</span>
+          {/* Card 1: Évènements (Large) - Anciennement "Projets & Hackathons" */}
+          <Link href="/evenements" className={`${styles.card} ${styles.cardLarge} ${styles.bgBlue}`}>
+            <img src="/images/evenements.jpg" alt="Évènements" className={styles.cardImage} />
+            <span className={styles.cardIcon}>🎯</span>
             <div className={styles.cardContent}>
-              <h2 className={styles.cardTitle}>Projets & Hackathons</h2>
+              <h2 className={styles.cardTitle}>Évènements</h2>
               <p className={styles.cardDesc}>
                 Découvrez les réalisations des étudiants : applications web, jeux vidéo,
                 IA et sécurité. Participez aux nuits du code et à la Code Game Jam.
               </p>
             </div>
-          </div>
+          </Link>
 
-          {/* Card 2: BDE */}
-          <div className={`${styles.card} ${styles.bgPurple}`}>
+          {/* Card 2: Vie du Campus */}
+          <Link href="/actualites" className={`${styles.card} ${styles.bgPurple}`}>
+            <img src="/images/actualites.jpg" alt="Vie du Campus" className={styles.cardImage} />
             <span className={styles.cardIcon}>🎉</span>
             <div className={styles.cardContent}>
               <h2 className={styles.cardTitle}>Vie du Campus</h2>
@@ -53,31 +55,59 @@ export default function Home() {
                 le BDE et les assos de l'IUT.
               </p>
             </div>
-          </div>
+          </Link>
 
-          {/* Card 3: Internships */}
-          <div className={`${styles.card} ${styles.bgOrange}`}>
+          {/* Card 3: Études & Carrière - Anciennement "Stages & Jobs" */}
+          <Link href="/stages" className={`${styles.card} ${styles.bgOrange}`}>
+            <img src="/images/etudes.jpg" alt="Études & Carrière" className={styles.cardImage} />
             <span className={styles.cardIcon}>💼</span>
             <div className={styles.cardContent}>
-              <h2 className={styles.cardTitle}>Stages & Jobs</h2>
+              <h2 className={styles.cardTitle}>Études & Carrière</h2>
               <p className={styles.cardDesc}>
                 Consultez les offres exclusives de nos partenaires pour vos stages
                 et alternances.
               </p>
             </div>
-          </div>
+          </Link>
 
-          {/* Card 4: Community (Large) */}
-          <div className={`${styles.card} ${styles.cardLarge} ${styles.bgGreen}`}>
+          {/* Card 4: Alumnis (Nouvelle) */}
+          <Link href="/alumni" className={`${styles.card} ${styles.bgGreen}`}>
+            <img src="/images/alumni.jpg" alt="Alumnis" className={styles.cardImage} />
+            <span className={styles.cardIcon}>🎓</span>
+            <div className={styles.cardContent}>
+              <h2 className={styles.cardTitle}>Alumnis</h2>
+              <p className={styles.cardDesc}>
+                Connectez-vous avec les anciens étudiants, découvrez leurs parcours
+                et bénéficiez de leur expérience professionnelle.
+              </p>
+            </div>
+          </Link>
+
+          {/* Card 5: Vie Étudiante (Nouvelle) */}
+          <Link href="/vie-etudiante" className={`${styles.card} ${styles.bgBlue}`}>
+            <img src="/images/vie-etudiante.jpg" alt="Vie Étudiante" className={styles.cardImage} />
+            <span className={styles.cardIcon}>🌟</span>
+            <div className={styles.cardContent}>
+              <h2 className={styles.cardTitle}>Vie Étudiante</h2>
+              <p className={styles.cardDesc}>
+                Toutes les informations pratiques pour votre quotidien : logement,
+                restauration, sport et culture à l'IUT.
+              </p>
+            </div>
+          </Link>
+
+          {/* Card 6: Entraide & Tutorat */}
+          <Link href="/tutorat" className={`${styles.card} ${styles.bgPurple}`}>
+            <img src="/images/entraide-tutorat.jpg" alt="Entraide & Tutorat" className={styles.cardImage} />
             <span className={styles.cardIcon}>🤝</span>
             <div className={styles.cardContent}>
               <h2 className={styles.cardTitle}>Entraide & Tutorat</h2>
               <p className={styles.cardDesc}>
-                Besoin d'aide en Java ou en Math ? Retrouvez les sessions de tutorat
+                Besoin d'aide en code ou en maths ? Retrouvez les sessions de tutorat
                 organisées par les 2èmes et 3èmes années.
               </p>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
     </main>
