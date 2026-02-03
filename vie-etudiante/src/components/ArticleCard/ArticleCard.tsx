@@ -57,7 +57,10 @@ export default function ArticleCard({ title, date, category, desc, slug, type = 
 
             <div className={styles.content}>
                 <h2 className={styles.title}>{title}</h2>
-                <p className={styles.description}>{desc}</p>
+                <p
+                    className={styles.description}
+                    dangerouslySetInnerHTML={{ __html: desc }}
+                />
             </div>
 
             <div className={styles.footer}>

@@ -58,13 +58,15 @@ export default function ArticleDetail({
                         </div>
                     )}
 
-                    <p className={styles.lead}>
-                        {description}
-                    </p>
+                    <p
+                        className={styles.lead}
+                        dangerouslySetInnerHTML={{ __html: description }}
+                    />
 
-                    <div className={styles.body}>
-                        {content || "Contenu détaillé à venir..."}
-                    </div>
+                    <div
+                        className={styles.body}
+                        dangerouslySetInnerHTML={{ __html: content || "Contenu détaillé à venir..." }}
+                    />
                 </div>
 
                 <div className={styles.footer}>

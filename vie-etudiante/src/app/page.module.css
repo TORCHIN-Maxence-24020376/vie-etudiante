@@ -16,11 +16,7 @@
   text-align: center;
   padding: 6rem 2rem;
   overflow: hidden;
-
-  /* Modern Mesh Gradient Background */
-  background:
-    radial-gradient(circle at 15% 50%, rgba(76, 29, 149, 0.15), transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.15), transparent 25%);
+  background: transparent;
 }
 
 .heroContent {
@@ -49,10 +45,7 @@
   line-height: 1.1;
   margin-bottom: 1.5rem;
   letter-spacing: -0.04em;
-  background: linear-gradient(180deg, #111 0%, #444 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
 }
 
 .highlight {
@@ -164,11 +157,13 @@
 
 .card {
   position: relative;
-  background: #fff;
+  background: rgba(24, 24, 27, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 30px;
   padding: 2.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -214,11 +209,11 @@
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color: #111;
+  color: #ffffff;
 }
 
 .cardDesc {
-  color: #666;
+  color: #d4d4d8;
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -239,20 +234,11 @@
 }
 
 /* Gradient Backgrounds for Cards */
-.bgBlue {
-  background: linear-gradient(135deg, #fff 50%, #e0f2fe 100%);
-}
-
-.bgPurple {
-  background: linear-gradient(135deg, #fff 50%, #f3e8ff 100%);
-}
-
-.bgGreen {
-  background: linear-gradient(135deg, #fff 50%, #dcfce7 100%);
-}
-
+.bgBlue,
+.bgPurple,
+.bgGreen,
 .bgOrange {
-  background: linear-gradient(135deg, #fff 50%, #ffedd5 100%);
+  background: rgba(15, 15, 20, 0.4);
 }
 
 /* Animations */
@@ -268,78 +254,7 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .hero {
-    background:
-      radial-gradient(circle at 15% 50%, rgba(76, 29, 149, 0.3), transparent 25%),
-      radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.2), transparent 25%);
-  }
-
-  .badge {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.1);
-    color: #ccc;
-  }
-
-  .title {
-    background: linear-gradient(180deg, #fff 0%, #aaa 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .subtitle {
-    color: #aaa;
-  }
-
-  .primaryButton {
-    background: #fff;
-    color: #000;
-  }
-
-  .primaryButton:hover {
-    background: #eee;
-  }
-
-  .secondaryButton {
-    background: transparent;
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-
-  .secondaryButton:hover {
-    background: rgba(255, 255, 255, 0.1);
-  }
-
-  .card {
-    background: #111;
-    border-color: rgba(255, 255, 255, 0.1);
-  }
-
-  .cardTitle {
-    color: #fff;
-  }
-
-  .cardDesc {
-    color: #888;
-  }
-
-  .bgBlue {
-    background: linear-gradient(135deg, #111 20%, #172554 100%);
-  }
-
-  .bgPurple {
-    background: linear-gradient(135deg, #111 20%, #3b0764 100%);
-  }
-
-  .bgGreen {
-    background: linear-gradient(135deg, #111 20%, #052e16 100%);
-  }
-
-  .bgOrange {
-    background: linear-gradient(135deg, #111 20%, #431407 100%);
-  }
-}
+/* Dark mode media query no longer needed as we force dark geek theme */
 
 @media (max-width: 1024px) {
   .title {
