@@ -456,6 +456,15 @@
         color: #fff;
     }
 
+    .input:focus,
+    .textarea:focus,
+    .select:focus {
+        background: #09090b;
+        border-color: #fff;
+        color: #fff;
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+    }
+
     .label {
         color: #a1a1aa;
     }

@@ -296,3 +296,27 @@
         grid-template-columns: 1fr;
     }
 }
+
+:global(.videoWrapper) {
+    background: #000;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 9/16;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    max-width: 320px;
+    max-height: 568px;
+    margin: 0 auto;
+}
+
+:global(.videoWrapper video),
+:global(.videoWrapper iframe) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0 !important;
+    max-width: 100% !important;
+    border: none;
+}
