@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react';
 import styles from '../inner.module.css';
 import NewsFilter from '../../components/NewsFilter/NewsFilter';
 import ArticleCard from '../../components/ArticleCard/ArticleCard';
-import contentData from '../../data/content.json';
+import actualitesData from '../../data/actualites.json';
 
 interface NewsItem {
     id: number;
@@ -15,14 +15,12 @@ interface NewsItem {
     category: string;
 }
 
-const CATEGORIES = ["Pédagogie", "Vie Étudiante", "Événement", "Partenariat", "International"];
-
 export default function Actualites() {
     const [activeCategory, setActiveCategory] = useState('All');
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
 
     const filteredNews = useMemo(() => {
-        let items = [...contentData.news];
+        let items = [...actualitesData.items];
 
         if (activeCategory !== 'All') {
             items = items.filter(item => item.category === activeCategory);
@@ -48,7 +46,7 @@ export default function Actualites() {
 
             <section className={styles.section}>
                 <NewsFilter
-                    categories={CATEGORIES}
+                    categories={actualitesData.categories}
                     activeCategory={activeCategory}
                     onCategoryChange={setActiveCategory}
                     sortOrder={sortOrder}

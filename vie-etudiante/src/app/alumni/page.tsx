@@ -1,6 +1,31 @@
+"use client";
+
+import { useState, useMemo } from 'react';
 import styles from '../inner.module.css';
+import NewsFilter from '../../components/NewsFilter/NewsFilter';
+import ArticleCard from '../../components/ArticleCard/ArticleCard';
+import alumniData from '../../data/alumni.json';
 
 export default function Alumni() {
+    const [activeCategory, setActiveCategory] = useState('All');
+    const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
+
+    const filteredItems = useMemo(() => {
+        let items = [...alumniData.items];
+
+        if (activeCategory !== 'All') {
+            items = items.filter(item => item.category === activeCategory);
+        }
+
+        items.sort((a, b) => {
+            const dateA = new Date(a.isoDate).getTime();
+            const dateB = new Date(b.isoDate).getTime();
+            return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
+        });
+
+        return items;
+    }, [activeCategory, sortOrder]);
+
     return (
         <main className={styles.main}>
             <section className={styles.hero}>
@@ -11,33 +36,33 @@ export default function Alumni() {
             </section>
 
             <section className={styles.section}>
+                <NewsFilter
+                    categories={alumniData.categories}
+                    activeCategory={activeCategory}
+                    onCategoryChange={setActiveCategory}
+                    sortOrder={sortOrder}
+                    onSortChange={setSortOrder}
+                />
+
                 <div className={styles.grid}>
-                    <div className={styles.card}>
-                        <h2 className={styles.cardTitle}>Annuaire des Anciens</h2>
-                        <p className={styles.cardDesc}>
-                            Retrouvez la liste des diplômés du BUT Informatique d'Aix depuis 2010.
-                        </p>
-                        <a href="#" className={styles.cardLink}>Consulter l'annuaire →</a>
-                    </div>
-
-                    <div className={styles.card}>
-                        <h2 className={styles.cardTitle}>Groupe LinkedIn</h2>
-                        <p className={styles.cardDesc}>
-                            Rejoignez notre groupe privé pour échanger des offres d'emploi et
-                            des conseils de carrière.
-                        </p>
-                        <a href="#" className={styles.cardLink}>Rejoindre le groupe →</a>
-                    </div>
-
-                    <div className={styles.card}>
-                        <h2 className={styles.cardTitle}>Témoignages</h2>
-                        <p className={styles.cardDesc}>
-                            Découvrez les parcours inspirants de nos anciens élèves : ingénieurs,
-                            développeurs freelance, chefs de projet...
-                        </p>
-                        <a href="#" className={styles.cardLink}>Lire les interviews →</a>
-                    </div>
+                    {filteredItems.map((item) => (
+                        <ArticleCard
+                            key={item.id}
+                            title={item.title}
+                            date={item.date}
+                            category={item.category}
+                            desc={item.desc}
+                            slug={item.slug}
+                            type="alumni"
+                        />
+                    ))}
                 </div>
+
+                {filteredItems.length === 0 && (
+                    <div style={{ textAlign: 'center', gridColumn: '1 / -1', padding: '2rem', color: '#888' }}>
+                        Aucun contenu trouvé dans cette catégorie.
+                    </div>
+                )}
             </section>
         </main>
     );

@@ -10,8 +10,8 @@ const Footer = () => {
                 <div className={styles.brandColumn}>
                     <h2>Vie Étudiante</h2>
                     <p className={styles.brandDescription}>
-                        La plateforme numéro 1 pour l'actualité, les bons plans et la culture étudiante en France.
-                        Informez-vous, partagez, vivez.
+                        La plateforme du département BUT Informatique d'Aix-en-Provence.
+                        Actualités, évènements BDE et ressources pédagogiques.
                     </p>
                 </div>
 
@@ -19,35 +19,31 @@ const Footer = () => {
                     <h3>Navigation</h3>
                     <div className={styles.linkList}>
                         <Link href="/actualites" className={styles.link}>Actualités</Link>
-                        <Link href="/campus" className={styles.link}>Campus</Link>
-                        <Link href="/culture" className={styles.link}>Culture</Link>
-                        <Link href="/jobs" className={styles.link}>Jobs & Stages</Link>
-                    </div>
-                </div>
-
-                <div className={styles.column}>
-                    <h3>À Propos</h3>
-                    <div className={styles.linkList}>
-                        <Link href="/qui-sommes-nous" className={styles.link}>Qui sommes-nous ?</Link>
+                        <Link href="/bde" className={styles.link}>Évènements BDE</Link>
+                        <Link href="/etudes" className={styles.link}>Études</Link>
                         <Link href="/contact" className={styles.link}>Contact</Link>
-                        <Link href="/partenaires" className={styles.link}>Devenir Partenaire</Link>
-                        <Link href="/equipe" className={styles.link}>L'Équipe</Link>
                     </div>
                 </div>
 
                 <div className={styles.column}>
-                    <h3>Suivez-nous</h3>
-                    <div className={styles.socials}>
-                        {/* Using simple placeholders for icons to avoid SVG bloat for now */}
-                        <a href="#" className={styles.socialIcon} aria-label="Twitter">𝕏</a>
-                        <a href="#" className={styles.socialIcon} aria-label="Instagram">In</a>
-                        <a href="#" className={styles.socialIcon} aria-label="LinkedIn">Li</a>
+                    <h3>Département</h3>
+                    <div className={styles.linkList}>
+                        <Link href="https://iut.univ-amu.fr/" className={styles.link} target="_blank">IUT d'Aix-Marseille</Link>
+                        <Link href="/alumni" className={styles.link}>Alumni</Link>
+                        <Link href="/partenaires" className={styles.link}>Partenaires</Link>
                     </div>
+                </div>
+
+                <div className={styles.column}>
+                    <h3>Administration</h3>
+                    <Link href="/admin" className={styles.adminBtn}>
+                        <span className={styles.adminIcon}>🔒</span> Dashboard Admin
+                    </Link>
                 </div>
             </div>
 
             <div className={styles.bottomBar}>
-                <p>&copy; {currentYear} Vie Étudiante. Tous droits réservés.</p>
+                <p>&copy; {currentYear} Vie Étudiante - BUT Informatique Aix. Fait avec passion.</p>
                 <div className={styles.legalLinks}>
                     <Link href="/legal" className={styles.legalLink}>Mentions Légales</Link>
                     <Link href="/privacy" className={styles.legalLink}>Politique de Confidentialité</Link>

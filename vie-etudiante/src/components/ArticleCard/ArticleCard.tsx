@@ -8,7 +8,7 @@ interface ArticleCardProps {
     category: string;
     desc: string;
     slug: string;
-    type?: 'actualites' | 'bde';
+    type?: 'actualites' | 'bde' | 'etudes' | 'alumni';
     price?: string;
 }
 
@@ -26,7 +26,16 @@ export default function ArticleCard({ title, date, category, desc, slug, type = 
         cardRef.current.style.setProperty('--mouse-y', `${y}px`);
     };
 
-    const baseUrl = type === 'bde' ? '/bde' : '/actualites';
+    const getBaseUrl = (type: string) => {
+        switch (type) {
+            case 'bde': return '/bde';
+            case 'etudes': return '/etudes';
+            case 'alumni': return '/alumni';
+            default: return '/actualites';
+        }
+    };
+
+    const baseUrl = getBaseUrl(type);
 
     return (
         <article
@@ -38,7 +47,7 @@ export default function ArticleCard({ title, date, category, desc, slug, type = 
                 <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                     <span className={styles.category}>{category}</span>
                     {price && (
-                        <span className={`${styles.priceBadge} ${price.toLowerCase().includes('gratuit') ? styles.free : styles.paid}`}>
+                        <span className={`${styles.priceBadge} ${/gratuit/i.test(price) ? styles.free : styles.paid}`}>
                             {price}
                         </span>
                     )}

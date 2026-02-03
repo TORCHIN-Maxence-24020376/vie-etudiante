@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react';
 import styles from '../inner.module.css';
 import NewsFilter from '../../components/NewsFilter/NewsFilter';
 import ArticleCard from '../../components/ArticleCard/ArticleCard';
-import contentData from '../../data/content.json';
+import bdeData from '../../data/bde.json';
 
 interface EventItem {
     id: number;
@@ -16,17 +16,23 @@ interface EventItem {
     price?: string;
 }
 
-const CATEGORIES = ["Soirée", "Voyage", "Sport", "Culture", "Autre"];
-
 export default function BDE() {
     const [activeCategory, setActiveCategory] = useState('All');
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
+    const [priceFilter, setPriceFilter] = useState<'all' | 'free' | 'paid'>('all');
 
     const filteredEvents = useMemo(() => {
-        let items = [...contentData.events];
+        let items = [...bdeData.items];
 
         if (activeCategory !== 'All') {
             items = items.filter(item => item.category === activeCategory);
+        }
+
+        if (priceFilter !== 'all') {
+            items = items.filter(item => {
+                const isFree = item.price?.toLowerCase() === 'gratuit';
+                return priceFilter === 'free' ? isFree : !isFree;
+            });
         }
 
         items.sort((a, b) => {
@@ -36,7 +42,7 @@ export default function BDE() {
         });
 
         return items;
-    }, [activeCategory, sortOrder]);
+    }, [activeCategory, sortOrder, priceFilter]);
 
     return (
         <main className={styles.main}>
@@ -49,11 +55,13 @@ export default function BDE() {
 
             <section className={styles.section}>
                 <NewsFilter
-                    categories={CATEGORIES}
+                    categories={bdeData.categories}
                     activeCategory={activeCategory}
                     onCategoryChange={setActiveCategory}
                     sortOrder={sortOrder}
                     onSortChange={setSortOrder}
+                    priceFilter={priceFilter}
+                    onPriceFilterChange={setPriceFilter}
                 />
 
                 <div className={styles.grid}>

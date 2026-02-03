@@ -1,0 +1,170 @@
+/* Container */
+.container {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    animation: fadeUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Switcher */
+.switchContainer {
+    display: flex;
+    background: #f4f4f5;
+    padding: 0.35rem;
+    border-radius: 99px;
+    align-self: center;
+    margin-bottom: 1rem;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.switchBtn {
+    border: none;
+    background: transparent;
+    padding: 0.65rem 1.5rem;
+    border-radius: 99px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #71717a;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+    position: relative;
+}
+
+.switchBtn.active {
+    color: #000;
+    background: #fff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Form Groups */
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #3f3f46;
+    margin-left: 0.25rem;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    border: 1px solid #e4e4e7;
+    background: #fafafa;
+    font-size: 1rem;
+    color: #18181b;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: #000;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Submit Button */
+.submitBtn {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 99px;
+    background: #18181b;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    align-self: flex-start;
+}
+
+.submitBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+    background: #000;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    .container {
+        background: #18181b;
+        /* Zinc 900 */
+        border-color: #27272a;
+    }
+
+    .switchContainer {
+        background: #27272a;
+        /* Zinc 800 */
+    }
+
+    .switchBtn {
+        color: #a1a1aa;
+    }
+
+    .switchBtn.active {
+        color: #fff;
+        background: #3f3f46;
+        /* Zinc 700 */
+    }
+
+    .label {
+        color: #d4d4d8;
+    }
+
+    .input,
+    .textarea {
+        background: #27272a;
+        border-color: #3f3f46;
+        color: #fff;
+    }
+
+    .input:focus,
+    .textarea:focus {
+        border-color: #52525b;
+        background: #18181b;
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05);
+    }
+
+    .submitBtn {
+        background: #fff;
+        color: #000;
+    }
+
+    .submitBtn:hover {
+        background: #e4e4e7;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
