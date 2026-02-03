@@ -129,6 +129,57 @@
     color: #fff;
 }
 
+.body blockquote {
+    background: rgba(139, 92, 246, 0.05);
+    border-left: 4px solid #a78bfa;
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+    font-style: italic;
+    color: #e4e4e7;
+    border-radius: 0 16px 16px 0;
+    position: relative;
+}
+
+.body blockquote::before {
+    content: "“";
+    position: absolute;
+    top: -1rem;
+    left: 0.5rem;
+    font-size: 4rem;
+    color: rgba(139, 92, 246, 0.2);
+    font-family: serif;
+}
+
+.body cite {
+    display: block;
+    margin-top: 0.75rem;
+    font-style: normal;
+    font-weight: 700;
+    color: #4ade80;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.body ul {
+    margin: 1.5rem 0 2rem 1.5rem;
+    list-style: none;
+}
+
+.body li {
+    position: relative;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+}
+
+.body li::before {
+    content: "◈";
+    position: absolute;
+    left: 0;
+    color: #a78bfa;
+    font-size: 0.8rem;
+}
+
 .body img {
     max-width: 70%;
     height: auto;
