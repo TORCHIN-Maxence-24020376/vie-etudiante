@@ -112,6 +112,37 @@
   border-color: rgba(0, 0, 0, 0.2);
 }
 
+.discordButton {
+  padding: 1rem 2rem;
+  border-radius: 99px;
+  background: #fff;
+  color: #111;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.discordButton:hover {
+  background: #5865F2;
+  color: #fff;
+  border-color: #5865F2;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(88, 101, 242, 0.3);
+}
+
+.discordIcon {
+  transition: transform 0.3s ease;
+}
+
+.discordButton:hover .discordIcon {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+
 /* Features Bento Grid */
 .featuresSection {
   padding: 4rem 2rem;
