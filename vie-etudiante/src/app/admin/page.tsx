@@ -30,10 +30,28 @@ export default function AdminPage() {
     const [isCreating, setIsCreating] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
+    // Security state
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState(false);
+
     // Fetch data when type changes
     useEffect(() => {
-        fetchData(selectedType);
-    }, [selectedType]);
+        if (isAuthenticated) {
+            fetchData(selectedType);
+        }
+    }, [selectedType, isAuthenticated]);
+
+    const handleLogin = (e: React.FormEvent) => {
+        e.preventDefault();
+        // A simple "vite fait" password check as requested
+        if (password === 'cyriltamine') {
+            setIsAuthenticated(true);
+            setError(false);
+        } else {
+            setError(true);
+        }
+    };
 
     const fetchData = async (type: ContentType) => {
         setIsLoading(true);
@@ -47,6 +65,35 @@ export default function AdminPage() {
             setIsLoading(false);
         }
     };
+
+    if (!isAuthenticated) {
+        return (
+            <div className={styles.passwordGate}>
+                <div className={styles.passwordCard}>
+                    <div className={styles.passwordIcon}>🔐</div>
+                    <h1 className={styles.passwordTitle}>Espace Admin</h1>
+                    <p className={styles.passwordDesc}>Veuillez saisir le code pour accéder au dashboard.</p>
+                    
+                    <form onSubmit={handleLogin} className={styles.passwordForm}>
+                        <div className={styles.formGroup}>
+                            <input
+                                type="password"
+                                className={styles.input}
+                                placeholder="Mot de passe"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                autoFocus
+                            />
+                        </div>
+                        {error && <p className={styles.errorMsg}>Code incorrect. Réessayez.</p>}
+                        <button type="submit" className={styles.saveBtn}>
+                            Se connecter
+                        </button>
+                    </form>
+                </div>
+            </div>
+        );
+    }
 
     const handleSave = async (updatedData: ContentData) => {
         try {
